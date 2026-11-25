@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Potfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="favicon.ico?v=2">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media-queries.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+        <!-- Navigation Bar -->
+        <header>
+            <h1>Algo<span class="heading1">Hub</span></h1>
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <a class="signup" href="#sign"><button>Sign Up</button></a>
+            <a class="admin-login" href="admin.html" target="_blank"><button>Admin Login</button></a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+
+        <!-- Mobile slide-in drawer (outside header so position:fixed works) -->
+        <div class="nav-drawer" id="navDrawer">
+            <button class="nav-close-btn" id="navCloseBtn" aria-label="Close navigation">&times;</button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+
+            <!-- Drawer action buttons (Sign Up / Admin) -->
+            <div class="drawer-actions">
+                <a class="signup" href="#sign"><button>Sign Up</button></a>
+                <a class="admin-login" href="admin.html" target="_blank"><button>Admin Login</button></a>
+            </div>
+        </div>
+
+        <!-- Overlay backdrop -->
+        <div class="nav-overlay" id="navOverlay"></div>
+
+        <div id="form-message" style="padding:10px; text-align:center; display:none; font-weight:bold;"></div>
+
+         <!-- Home Section -->
+        <section id="home" class="home-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Welcome to <span class="highlight">AlgoHub</span></h1>
+                    <p class="hero-subtitle">Empowering Innovation Through Technology</p>
+                    <p class="hero-description">
+                        At AlgoHub, we are a leading technology company specializing in cutting-edge solutions 
+                        that drive digital transformation. Our expertise spans across multiple domains including 
+                        cybersecurity, web development, software engineering, and creative design.
+                        We and offer jobs and courses in the areas of Software engineering, Cybersecurity, Networking, Telecommunication etc
+                    </p>
+                    
+                    <div class="cta-buttons">
+                        <a class="about" href="#about"><button class="about">Learn More</button></a>
+                        <a class="signup2" href="#sign"><button class="signup2">Join Our Team</button></a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+   
+        <!-- About Us Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">About AlgoHub</h2>
+                <div class="about-content">
+                    <div class="about-intro">
+                        <p>AlgoHub is at the forefront of technological innovation, providing comprehensive solutions 
+                        and fostering the next generation of tech professionals through our dynamic internship and 
+                        employment programs.</p>
+                    </div>
+                    
+                    <div class="programs-container">
+                        <div class="program-card">
+                            <div class="program-header">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h3>Internship Program</h3>
+                            </div>
+                            <div class="program-content">
+                                <p class="program-brief">
+                                    Our internship program offers hands-on experience in cutting-edge technologies, 
+                                    mentorship from industry experts, and real-world project exposure.
+                                </p>
+                                <div class="program-details" id="intern-details">
+                                    <h4>What We Offer:</h4>
+                                    <ul>
+                                        <li>3-6 month structured learning programs</li>
+                                        <li>Mentorship from senior developers and engineers</li>
+                                        <li>Exposure to real client projects</li>
+                                        <li>Training in latest technologies and frameworks</li>
+                                        <li>Networking opportunities with industry professionals</li>
+                                        <li>Certificate of completion and recommendation letters</li>
+                                        <li>Potential for full-time employment upon successful completion</li>
+                                    </ul>
+                                    <h4>Internship Tracks:</h4>
+                                    <ul>
+                                        <li><strong>Frontend Development:</strong> React, Vue.js, Angular, HTML5, CSS3</li>
+                                        <li><strong>Backend Development:</strong> Node.js, Python, PHP, Java, Database Management</li>
+                                        <li><strong>Cybersecurity:</strong> Ethical Hacking, Network Security, Penetration Testing</li>
+                                        <li><strong>UI/UX Design:</strong> Figma, Adobe Creative Suite, User Research</li>
+                                        <li><strong>Software Engineering:</strong> C/C++, Data Structures, Algorithms</li>
+                                    </ul>
+                                </div>
+                                <button class="show-more-btn" onclick="toggleDetails('intern-details', this)">
+                                    Show More <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+    
+                        <div class="program-card">
+                            <div class="program-header">
+                                <i class="fas fa-briefcase"></i>
+                                <h3>Employment Program</h3>
+                            </div>
+                            <div class="program-content">
+                                <p class="program-brief">
+                                    Join our team of skilled professionals and contribute to innovative projects 
+                                    that shape the future of technology across various industries.
+                                </p>
+                                <div class="program-details" id="job-details">
+                                    <h4>Career Opportunities:</h4>
+                                    <ul>
+                                        <li><strong>Senior Software Engineers:</strong> Lead development teams and architect solutions</li>
+                                        <li><strong>Cybersecurity Specialists:</strong> Protect and secure digital infrastructure</li>
+                                        <li><strong>Full-Stack Developers:</strong> Build end-to-end web applications</li>
+                                        <li><strong>UI/UX Designers:</strong> Create exceptional user experiences</li>
+                                        <li><strong>DevOps Engineers:</strong> Streamline deployment and infrastructure</li>
+                                        <li><strong>Project Managers:</strong> Lead technical projects and teams</li>
+                                    </ul>
+                                    <h4>Benefits & Perks:</h4>
+                                    <ul>
+                                        <li>Competitive salary packages</li>
+                                        <li>Health insurance and wellness programs</li>
+                                        <li>Flexible working hours and remote work options</li>
+                                        <li>Professional development and training opportunities</li>
+                                        <li>Modern office environment with latest technology</li>
+                                        <li>Performance bonuses and career advancement</li>
+                                        <li>Team building activities and company events</li>
+                                    </ul>
+                                    <h4>Required Skills:</h4>
+                                    <ul>
+                                        <li>Strong foundation in programming languages (C, C++, Python, JavaScript)</li>
+                                        <li>Experience with modern frameworks and technologies</li>
+                                        <li>Problem-solving and analytical thinking</li>
+                                        <li>Team collaboration and communication skills</li>
+                                        <li>Continuous learning mindset</li>
+                                    </ul>
+                                </div>
+                                <button class="show-more-btn" onclick="toggleDetails('job-details', this)">
+                                    Show More <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <!-- Sign Up Section -->
+        <center>
+       <section id="sign" class="signup-section">
+        <div class="container">
+            <h2 class="section-title">Join AlgoHub</h2>
+            <p class="section-subtitle">Start your journey with us today</p>
+            
+            <div class="signup-tabs">
+                <button class="tab-btn active" onclick="switchTab('intern')">
+                    <i class="fas fa-graduation-cap"></i>
+                    Internship Application
+                </button>
+                <button class="tab-btn" onclick="switchTab('job')">
+                    <i class="fas fa-briefcase"></i>
+                    Job Application
+                </button>
+            </div>
+
+            <div class="forms-container">
+                <!-- Internship Form -->
+                <form id="intern-form" class="signup-form active" action="process_application.php" method="POST">
+                    <input type="hidden" name="application_type" value="intern">
+                    <h3>Internship Application</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="intern_first_name">First Name </label>
+                            <input type="text" id="intern_first_name" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="intern_last_name">Last Name </label>
+                            <input type="text" id="intern_last_name" name="last_name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="intern_email">Email Address </label>
+                            <input type="email" id="intern_email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="intern_phone">Phone Number </label>
+                            <input type="tel" id="intern_phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="intern_university">University/College </label>
+                        <input type="text" id="intern_university" name="university" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="intern_major">Major/Field of Study </label>
+                            <input type="text" id="intern_major" name="major" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="intern_year">Year of Study </label>
+                            <select id="intern_year" name="year_of_study" required>
+                                <option value="">Select Year</option>
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year">3rd Year</option>
+                                <option value="4th Year">4th Year</option>
+                                <option value="Graduate">Graduate</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="intern_track">Preferred Internship Track </label>
+                        <select id="intern_track" name="internship_track" required>
+                            <option value="">Select Track</option>
+                            <option value="Frontend Development">Frontend Development</option>
+                            <option value="Backend Development">Backend Development</option>
+                            <option value="Full-Stack Development">Full-Stack Development</option>
+                            <option value="Cybersecurity">Cybersecurity & Networking</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Software Engineering">Software Engineering (C/C++)</option>
+                            <option value="Mobile Development">Mobile Development</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="intern_skills">Technical Skills</label>
+                        <textarea id="intern_skills" name="technical_skills" placeholder="List your programming languages, frameworks, and technical skills..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="intern_motivation">Why do you want to intern at AlgoHub? </label>
+                        <textarea id="intern_motivation" name="motivation" required placeholder="Tell us about your motivation and career goals..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Submit Application
+                    </button>
+                </form>
+
+                <!-- Job Application Form -->
+                <form id="job-form" class="signup-form" action="process_application.php" method="POST">
+                    <input type="hidden" name="application_type" value="job">
+                    <h3>Job Application</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="job_first_name">First Name </label>
+                            <input type="text" id="job_first_name" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="job_last_name">Last Name </label>
+                            <input type="text" id="job_last_name" name="last_name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="job_email">Email Address </label>
+                            <input type="email" id="job_email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="job_phone">Phone Number </label>
+                            <input type="tel" id="job_phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="job_position">Desired Position </label>
+                            <select id="job_position" name="desired_position" required>
+                                <option value="">Select Position</option>
+                                <option value="Senior Software Engineer">Senior Software Engineer</option>
+                                <option value="Frontend Developer">Frontend Developer</option>
+                                <option value="Backend Developer">Backend Developer</option>
+                                <option value="Full-Stack Developer">Full-Stack Developer</option>
+                                <option value="Cybersecurity Specialist">Cybersecurity Specialist</option>
+                                <option value="UI/UX Designer">UI/UX Designer</option>
+                                <option value="Graphic Designer">Graphic Designer</option>
+                                <option value="DevOps Engineer">DevOps Engineer</option>
+                                <option value="Project Manager">Project Manager</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="job_experience">Years of Experience </label>
+                            <select id="job_experience" name="years_experience" required>
+                                <option value="">Select Experience</option>
+                                <option value="0-1 years">0-1 years</option>
+                                <option value="2-3 years">2-3 years</option>
+                                <option value="4-5 years">4-5 years</option>
+                                <option value="6-8 years">6-8 years</option>
+                                <option value="9+ years">9+ years</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job_education">Highest Education </label>
+                        <select id="job_education" name="education" required>
+                            <option value="">Select Education</option>
+                            <option value="High School">High School</option>
+                            <option value="Associate Degree">Associate Degree</option>
+                            <option value="Bachelor's Degree">Bachelor's Degree</option>
+                            <option value="Master's Degree">Master's Degree</option>
+                            <option value="PhD">PhD</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job_skills">Technical Skills & Expertise </label>
+                        <textarea id="job_skills" name="technical_skills" required placeholder="List your programming languages, frameworks, tools, and technical expertise..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job_experience_desc">Professional Experience </label>
+                        <textarea id="job_experience_desc" name="experience_description" required placeholder="Describe your relevant work experience, projects, and achievements..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job_salary">Expected Salary Range</label>
+                        <select id="job_salary" name="salary_expectation">
+                            <option value="">Select Range</option>
+                            <option value="$40,000 - $60,000">$40,000 - $60,000</option>
+                            <option value="$60,000 - $80,000">$60,000 - $80,000</option>
+                            <option value="$80,000 - $100,000">$80,000 - $100,000</option>
+                            <option value="$100,000 - $120,000">$100,000 - $120,000</option>
+                            <option value="$120,000+">$120,000+</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Submit Application
+                    </button>
+                </form>
+            </div>
+        </div>
+        </center>
+       </section> 
+
+        <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Get in touch with our team</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Office Address</h4>
+                            <p>Bamenda<br>Bambili<br>ENS Street</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone Numbers</h4>
+                            <p>Main: +237 670028677<br>HR: +237 655234568<br>Support: +237 651256900</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Addresses</h4>
+                            <p>General:generl@algohub<br>Careers:career@algohub <br>Support:support@algohub</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+       <footer class="footer">
+         <center>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-microchip"></i>
+                    <span>AlgoHub</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 AlgoHub. All rights reserved.</p>
+            </div>
+            </center>
+        </div>
+       </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
